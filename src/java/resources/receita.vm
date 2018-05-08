@@ -1,4 +1,13 @@
-<!doctype html>
 <html>
-    
+    <head>
+        <title>Cadastrar nova receita - Meu Menu</title>
+    </head>
+
+    <body>
+        <div class="receita">
+            <h1>$receita.titulo</h1>
+            <h3>$receita.texto</h3>
+            <a href="/meumenu/">Voltar</a>
+        </div>
+    </body>
 </html>

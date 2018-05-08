@@ -1,8 +1,22 @@
 <html>
     <head>
+        <title>Receitas - Meu Menu</title>
     </head>
 
     <body>
-        test
+        <div class="busca">
+            <a href="/meumenu/receita/">Cadastrar nova receita</a>
+            <form method="GET" action="/meumenu/">
+                <input type="text" name="chave" />
+                <input type="submit" value="Buscar" />
+            </form>
+        </div>
+
+        #foreach( $receita in $receitas )
+            <div>
+                <a href="/meumenu/receita/?id=$receita.id">$receita.titulo</a>
+            </div>
+        #end
+        
     </body>
 </html>

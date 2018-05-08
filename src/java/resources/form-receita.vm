@@ -1,3 +1,15 @@
 <html>
+    <head>
+        <title>Cadastrar nova receita - Meu Menu</title>
+    </head>
 
+    <body>
+        <div class="form-receita">
+                <form method="POST" action="/meumenu/receita/">
+                <input type="text" name="titulo" />
+                <input type="text" name="texto" />
+                <input type="submit" value="Salvar" />
+            </form>
+        </div>
+    </body>
 </html>
