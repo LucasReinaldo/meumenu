@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/meumenu/receitas/">Meu Menu</a>
+
+    <form class="form-inline my-2 my-lg-0"
+          method="GET" action="/meumenu/receitas/">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar Receita" aria-label="Search"
+                 name="chave">
+          <button class="btn btn-info" type="submit">Buscar</button>
+    </form>
+
+    <a href="/meumenu/receitas/receita"
+            class="btn btn-info">Cadastrar nova receita
+    </a>
+</nav>

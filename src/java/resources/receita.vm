@@ -1,13 +1,23 @@
+<!doctype html>
 <html>
     <head>
-        <title>Cadastrar nova receita - Meu Menu</title>
+        #parse("resources/head.vm")
+        <title>Receita - Meu Menu</title>
     </head>
 
     <body>
-        <div class="receita">
-            <h1>$receita.titulo</h1>
-            <h3>$receita.texto</h3>
-            <a href="/meumenu/">Voltar</a>
+        #parse("resources/navbar.vm")
+        <div style="margin-top:20px;">
+        <h3>Receita: $receita.titulo</h3>
+            <div class="card">
+                <div class="card-body">
+                    <p><h3>$receita.texto</h3></p>
+                    <a href="/meumenu/receitas/"
+                                class="btn btn-info"
+                                style="float:right;">Voltar
+                    </a>
+                </div>
+            </div>
         </div>
     </body>
 </html>

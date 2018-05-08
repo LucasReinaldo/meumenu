@@ -11,7 +11,7 @@ import javax.ws.rs.core.Application;
  * @author LucasReinaldo
  */
 
-@ApplicationPath("")
+@ApplicationPath("receitas")
 public class ConfiguracaoRest extends Application {
     
     @Override

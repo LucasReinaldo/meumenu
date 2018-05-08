@@ -40,6 +40,6 @@ public class RecursoFormReceita {
 
         Receita receita = new Receita(ReceitaController.getInstance().getUltimoIdValido(), titulo, texto);
         ReceitaController.getInstance().cadastrarReceita(receita);
-        return Response.seeOther(URI.create("/meumenu/")).build();
+        return Response.seeOther(URI.create("/meumenu/receitas/")).build();
     }
 }

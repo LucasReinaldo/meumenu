@@ -1,15 +1,31 @@
+<!doctype html>
 <html>
     <head>
+        #parse("resources/head.vm")
         <title>Cadastrar nova receita - Meu Menu</title>
     </head>
 
     <body>
-        <div class="form-receita">
-                <form method="POST" action="/meumenu/receita/">
-                <input type="text" name="titulo" />
-                <input type="text" name="texto" />
-                <input type="submit" value="Salvar" />
-            </form>
+        #parse("resources/navbar.vm")
+        <div style="margin-top:20px;">
+        <h3>Cadastrar nova receita</h3>
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="/meumenu/receitas/receita/">
+                            <label>Título</label>
+                            <input type="text" name="titulo"
+                                    class="form-control" />
+
+                            <label>Texto da receita</label>
+                            <textarea name="texto"
+                                      class="form-control" 
+                                      rows="5">
+                            </textarea>
+
+                            <button class="btn btn-success" type="submit" style="margin-top:10px;float:right;">Salvar</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 </html>
