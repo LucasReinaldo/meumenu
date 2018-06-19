@@ -2,6 +2,7 @@ package com.meumenu.controller;
 
 import com.meumenu.model.Receita;
 import com.meumenu.model.ReceitaCache;
+import com.meumenu.persistence.ReceitaDao;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,10 @@ public class ReceitaController {
     }
 
     public void cadastrarReceita(Receita receita) {
-        ReceitaCache.getInstance().adicionarReceita(receita);
+//        ReceitaCache.getInstance().adicionarReceita(receita);
+        ReceitaDao dao = new ReceitaDao();
+        dao.save(receita);
+        System.out.println("aeho");
     }
 
     public Set<Receita> buscarReceita(String value) {
@@ -27,7 +31,8 @@ public class ReceitaController {
             return ReceitaCache.getInstance().getReceitas();
         }
         for (Receita receita : ReceitaCache.getInstance().getReceitas()) {
-            if (receita.getTitulo().toLowerCase().contains(value.toLowerCase()) || receita.getTexto().toLowerCase().contains(value.toLowerCase())) {
+            if (receita.getTitulo().toLowerCase().contains(value.toLowerCase()) 
+                    || receita.getTexto().toLowerCase().contains(value.toLowerCase())) {
                 receitas.add(receita);
             }
         }
@@ -46,6 +51,10 @@ public class ReceitaController {
         return null;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public Integer getUltimoIdValido() {
         return ReceitaCache.getInstance().getReceitas().size() + 1;
     }

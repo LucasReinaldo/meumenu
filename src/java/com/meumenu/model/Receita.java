@@ -1,16 +1,31 @@
 package com.meumenu.model;
 
-import java.util.Objects;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author LucasReinaldo
  */
-public class Receita {
+@Entity
+public class Receita implements Serializable{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    
+    @Column
     private String titulo;
+    
+    @Column(columnDefinition = "TEXT") 
     private String texto;
+
+    public Receita() {
+    }
 
     public Receita(Integer id, String titulo, String texto) {
         this.id = id;
